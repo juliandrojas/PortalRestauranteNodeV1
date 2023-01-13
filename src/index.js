@@ -1,7 +1,7 @@
 //Import express
 import express from 'express';
 //Import db.js
-import { pool } from "./db.js";
+import { pool } from "../db.js";
 //Store the initialization of express in a variable
 const app = express();
 //Configure the port 3000
@@ -10,9 +10,8 @@ console.log('Server run in port 3000')
 //Endpoints (Routes of the server)
 //Query to the database using async await and pool.query method
 app.get('/ping', async (require, response) => {
-    await pool.query('SELECT * FROM reservas', () => {
-
-    })
+    const [result] = await pool.query('SELECT * FROM reservas')
+    response.json(result[0])
 })
 //Principal route
 app.get('/', (require, response) => {
