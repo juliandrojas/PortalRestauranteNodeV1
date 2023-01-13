@@ -1,5 +1,6 @@
 //Import express
 import express from 'express';
+
 //Store the initialization of express in a variable
 const app = express();
 //Configure the port 3000
