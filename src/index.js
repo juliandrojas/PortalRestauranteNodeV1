@@ -6,8 +6,6 @@ import reservationsRoutes from "./routes/reservations.routes.js";
 import indexRoutes from "./routes/index.routes.js";
 //Store the initialization of express in a variable
 const app = express();
-//Assets
-app.use(express.static("view"));
 //Specify the html template engine
 app.set('view engine', 'ejs');
 //Understanding the JSON file
