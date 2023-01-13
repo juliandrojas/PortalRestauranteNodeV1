@@ -1,21 +1,15 @@
 import { Router } from "express";
+//Import the reservations.controller.js
+import { indexPage, insertReservation, editReservation, deleteReservation } from "../controllers/reservations.controller.js";
 //Create a router
 const router = Router();
 //Endpoints (Routes of the server)
 //Principal route
-router.get('/', (require, response) => {
-    response.send("Hola Mundo");
-})
+router.get('/', indexPage)
 //Add the data
-router.post('/reserva', (require, response) => {
-    response.send("Create Reservation")
-})
+router.post('/reserva', insertReservation)
 //Edit the data
-router.put('/edit', (require, response) => {
-    response.send("Editing reservation")
-})
+router.put('/edit', editReservation)
 //Delete the data
-router.delete('/delete', (require, response) => {
-    response.send("Deleting reservation")
-})
+router.delete('/delete', deleteReservation)
 export default router;
